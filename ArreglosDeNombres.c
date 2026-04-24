@@ -11,7 +11,7 @@ int main(){
     char *V[cant];
     char buff[120];
     for (int i=0; i<cant; i++){
-        printf("Ingrese su nombre: ");
+        printf("Ingrese su nombre:");
         scanf(" %s", buff);
         int caracteres = strlen(buff);
         V[i]= (char *)malloc(sizeof(char) * caracteres + 1);
@@ -38,7 +38,7 @@ void MostrarPersonas(char *V[], int cant){
 
 void BuscarNombre(char *V[], int cant){
     int num;
-    printf("---Busca nombre por ID---");
+    printf("---Busca nombre por ID---\n");
     printf("Ingrese un numero: ");
     scanf("%d", &num);
 
