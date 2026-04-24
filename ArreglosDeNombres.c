@@ -4,7 +4,7 @@
 
 
 void MostrarPersonas(char *V[], int cant);
-int BuscarNombre(char *V[], int cant, char nombre[]);
+int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]);
 
 int main(){
     int cant=5;
@@ -25,7 +25,7 @@ int main(){
     MostrarPersonas(V, cant);
     printf("Ingrese un nombre: ");
     scanf(" %s", nombre);
-    indice = BuscarNombre(V, cant, nombre);
+    indice = BuscarNombrePorPalabra(V, cant, nombre);
     if(indice != -1){
         printf("Coincidencia encontrada: %d) %s \n", indice, V[indice]);
     }else{
@@ -46,7 +46,7 @@ void MostrarPersonas(char *V[], int cant){
     }
 }
 
-int BuscarNombre(char *V[], int cant, char nombre[]){
+int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]){
     char *resultado;
     int indice;
     //la funcion busca el nombre en el arreglo
