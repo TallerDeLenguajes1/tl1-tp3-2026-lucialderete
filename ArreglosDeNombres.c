@@ -4,18 +4,17 @@
 
 
 void MostrarPersonas(char *V[], int cant);
-int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]);
+void BuscarNombre(char *V[], int cant);
 
 int main(){
     int cant=5;
     int indice;
     char nombre[120];
-
     char *V[cant];
     char buff[120];
 
     for (int i=0; i<cant; i++){
-        printf("Ingrese su nombre: ");
+        printf("Ingrese su nombre:");
         scanf(" %s", buff);
         int caracteres = strlen(buff);
         V[i]= (char *)malloc(sizeof(char) * caracteres + 1);
@@ -23,6 +22,7 @@ int main(){
     }
     
     MostrarPersonas(V, cant);
+    BuscarNombrePorId(V, cant);
     printf("Ingrese un nombre: ");
     scanf(" %s", nombre);
     indice = BuscarNombrePorPalabra(V, cant, nombre);
@@ -41,11 +41,23 @@ int main(){
 
 void MostrarPersonas(char *V[], int cant){
     for (int i=0; i<cant;i++){
-        printf("%d %s \n", i,  V[i]);
+        printf("%d) %s \n", i, V[i]);
 
     }
 }
 
+void BuscarNombrePorId(char *V[], int cant){
+    int num;
+    printf("---Busca nombre por ID---\n");
+    printf("Ingrese un numero: ");
+    scanf("%d", &num);
+
+    if (num >= 0 && num < cant){
+        printf("El nombre ubicado en la posicion %d es %s:\n ", num, V[num]);
+    }else{
+        printf("no se encontró el valor buscado");
+    }
+}
 int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]){
     char *resultado;
     int indice;
