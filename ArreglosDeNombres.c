@@ -4,7 +4,8 @@
 
 
 void MostrarPersonas(char *V[], int cant);
-void BuscarNombre(char *V[], int cant);
+void BuscarNombrePorId(char *V[], int cant);
+int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]);
 
 int main(){
     int cant=5;
@@ -53,9 +54,9 @@ void BuscarNombrePorId(char *V[], int cant){
     scanf("%d", &num);
 
     if (num >= 0 && num < cant){
-        printf("El nombre ubicado en la posicion %d es %s:\n ", num, V[num]);
+        printf("El nombre ubicado en la posicion %d es %s\n ", num, V[num]);
     }else{
-        printf("no se encontró el valor buscado");
+        printf("no se encontró el valor buscado\n");
     }
 }
 int BuscarNombrePorPalabra(char *V[], int cant, char nombre[]){
