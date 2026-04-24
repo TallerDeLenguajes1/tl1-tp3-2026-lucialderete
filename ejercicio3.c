@@ -32,8 +32,6 @@ void librerarMemoria(Cliente *Clientes, int cantClientes);
 //funcion principal
 int main(){
     int cantClientes;
-    int cantProd = 10;
-    float precioFinal;
     char buff[120];
     srand(time(NULL));
 
